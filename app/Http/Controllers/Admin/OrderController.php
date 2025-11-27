@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    // List semua pesanan
     public function index()
     {
         $orders = Order::with('user', 'package')
@@ -20,7 +19,6 @@ class OrderController extends Controller
         return view('admin.orders.index', compact('orders'));
     }
 
-    // Detail pesanan
     public function show($id)
     {
         $order = Order::with('user', 'package')->findOrFail($id);
@@ -28,7 +26,6 @@ class OrderController extends Controller
         return view('admin.orders.show', compact('order'));
     }
 
-    // Update status pesanan
     public function updateStatus(Request $request, $id)
     {
         $request->validate([
@@ -42,7 +39,6 @@ class OrderController extends Controller
         return back()->with('success', 'Status pesanan berhasil diperbarui.');
     }
 
-    // Hapus pesanan
     public function delete($id)
     {
         Order::findOrFail($id)->delete();

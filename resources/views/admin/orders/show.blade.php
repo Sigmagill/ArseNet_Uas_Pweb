@@ -176,6 +176,7 @@
 
                 <button type="submit" class="btn-primary">Update Status</button>
                 <a href="{{ route('admin.orders.index') }}" class="btn-back">Kembali</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn-back">Kembali ke Dashboard</a>
             </form>
         </div>
 

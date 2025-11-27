@@ -129,6 +129,7 @@
 
                 <button type="submit" class="btn-primary">Update Paket</button>
                 <a href="{{ route('admin.packages.index') }}" class="btn-back">Kembali</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn-back">Kembali ke Dashboard</a>
 
             </form>
 

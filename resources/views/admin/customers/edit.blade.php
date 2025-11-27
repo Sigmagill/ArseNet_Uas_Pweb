@@ -13,7 +13,8 @@
         }
 
         .content {
-            margin-left: 260px; /* mengikuti sidebar admin */
+            margin-left: 260px;
+            /* mengikuti sidebar admin */
             padding: 40px;
             width: calc(100% - 260px);
         }
@@ -90,13 +91,27 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-25px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 
@@ -112,9 +127,9 @@
 
             {{-- ERROR MESSAGE --}}
             @if($errors->any())
-                @foreach($errors->all() as $e)
-                    <div class="error-msg">{{ $e }}</div>
-                @endforeach
+            @foreach($errors->all() as $e)
+            <div class="error-msg">{{ $e }}</div>
+            @endforeach
             @endif
 
             <form action="{{ route('admin.customers.update', $customer->id) }}" method="POST">
@@ -134,6 +149,7 @@
 
                 <button type="submit" class="btn-primary">Update Customer</button>
                 <a href="{{ route('admin.customers.index') }}" class="btn-back">Kembali</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn-back">Kembali ke Dashboard</a>
 
             </form>
 

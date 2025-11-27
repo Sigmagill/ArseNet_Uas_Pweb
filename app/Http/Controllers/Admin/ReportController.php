@@ -12,8 +12,6 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ReportController extends Controller
 {
-    // ------------------ PDF ------------------
-
     public function customersPdf()
     {
         $customers = User::where('role', 'customer')->get();

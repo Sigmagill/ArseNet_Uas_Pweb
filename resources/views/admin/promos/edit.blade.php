@@ -85,9 +85,9 @@
         <div class="promo-card">
 
             @if ($errors->any())
-                @foreach ($errors->all() as $e)
-                    <p style="color: #ffdddd;">⚠ {{ $e }}</p>
-                @endforeach
+            @foreach ($errors->all() as $e)
+            <p style="color: #ffdddd;">⚠ {{ $e }}</p>
+            @endforeach
             @endif
 
             <form action="{{ route('admin.promos.update', $promo->id) }}" method="POST" enctype="multipart/form-data">
@@ -98,9 +98,9 @@
 
                 <label>Jenis Promo</label>
                 <select name="type" required>
-                    <option value="pemasangan"    {{ $promo->type == 'pemasangan' ? 'selected':'' }}>Diskon Pemasangan</option>
+                    <option value="pemasangan" {{ $promo->type == 'pemasangan' ? 'selected':'' }}>Diskon Pemasangan</option>
                     <option value="bulan_pertama" {{ $promo->type == 'bulan_pertama' ? 'selected':'' }}>Diskon Tagihan Bulan Pertama</option>
-                    <option value="paket_baru"    {{ $promo->type == 'paket_baru' ? 'selected':'' }}>Promo Paket Baru</option>
+                    <option value="paket_baru" {{ $promo->type == 'paket_baru' ? 'selected':'' }}>Promo Paket Baru</option>
                 </select>
 
                 <label>Diskon (%)</label>
@@ -113,8 +113,8 @@
                 <input type="file" name="banner_image" accept="image/*">
 
                 @if($promo->banner_image)
-                    <p style="margin: 10px 0;">Banner saat ini:</p>
-                    <img src="/uploads/promos/{{ $promo->banner_image }}" width="250" style="border-radius: 10px;">
+                <p style="margin: 10px 0;">Banner saat ini:</p>
+                <img src="/uploads/promos/{{ $promo->banner_image }}" width="250" style="border-radius: 10px;">
                 @endif
 
                 <label>Tanggal Mulai</label>
@@ -125,6 +125,8 @@
 
                 <button type="submit" class="btn-save">Update Promo</button>
                 <a href="{{ route('admin.promos.index') }}" class="btn-back">Kembali</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn-back">Kembali ke Dashboard</a>
+
             </form>
 
         </div>

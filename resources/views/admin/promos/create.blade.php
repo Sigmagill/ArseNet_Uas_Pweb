@@ -138,6 +138,7 @@
 
                 <button type="submit" class="btn-save">Simpan Promo</button>
                 <a href="{{ route('admin.promos.index') }}" class="btn-back">Kembali</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn-back">Kembali ke Dashboard</a>
             </form>
 
         </div>
